@@ -9,7 +9,7 @@ public class Prueba2 {
         
         while(a!=0){
             fact=fact*a;
-            a --;
+            a--;
         }
         resultado=fact;
         return resultado;
@@ -19,6 +19,6 @@ public class Prueba2 {
         Scanner entrada=new Scanner(System.in);
         System.out.println("Digite el numero que desea:");
         int numero=entrada.nextInt();
-        System.out.println(factorial(5));
+        System.out.println("Su numero "+numero+ " su factorial es "+factorial(numero));
     }
 }
