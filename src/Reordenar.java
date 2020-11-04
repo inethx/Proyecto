@@ -2,13 +2,9 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-
-
-
-
-public class Prueba2 {
- 
-    public static void Reordenar(int[] arreglo){
+public class Reordenar {
+    
+        public static void Reordenar(int[] arreglo){
         
         
         for(int i=(arreglo.length-1);0<=i;i--){
