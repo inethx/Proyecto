@@ -1,8 +1,8 @@
 
-import java.lang.Math; 
 import java.util.Scanner;
 
-public class Prueba2 {
+
+public class Figuras {
 
     public static int areaCuadrado(int lado){
         int resultado = lado*lado;
