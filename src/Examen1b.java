@@ -35,7 +35,7 @@ public class Examen1b {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("¿Bienvenido al sistema del Ministerio de Salud.");
+        System.out.println("Bienvenido al sistema del Ministerio de Salud.");
         System.out.println("¿Desea iniciar?. Escoja una opcion.");
 
         System.out.println("[1] si");
@@ -84,11 +84,11 @@ public class Examen1b {
                 double porcentaje = 0.1 * edad;
                 System.out.println("Su probabilidad de riesgo es: " + porcentaje);
             }
-            System.out.println("¿Desea borrar todos los datos?: ¿si/no?");
-            String datos = entrada.next();
-            if (datos.equals("si")) {
+            System.out.println("¿Desea reiniciar las base de datos?: ¿si/no?");
+            String reiniciar = entrada.next();
+            if (reiniciar.equals("si")) {
                 nombre = null;
-                apellido1 = null;
+                apellido1 = null ;
                 apellido2 = null;
                 edad = 0;
                 sexo = null;
