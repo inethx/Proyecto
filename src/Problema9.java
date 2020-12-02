@@ -21,9 +21,7 @@ public class Problema9 {
                 System.out.println();
                 i--;
             } else {
-
                 carnet.add(valorCarnet);
-
                 System.out.println();
                 System.out.println("Ingrese la nota del estudiante con carnet " + carnet.get(i) + ":");
                 int valorNotas = entrada.nextInt();
