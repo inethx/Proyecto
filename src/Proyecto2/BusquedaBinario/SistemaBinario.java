@@ -6,7 +6,6 @@ public class SistemaBinario {
 
     int numVector;
     int vector[];
-    int numBinario;
     int numEntero;
 
     public SistemaBinario() {
@@ -41,17 +40,22 @@ public class SistemaBinario {
 
     public void busquedaBinario() {
 
-        numBinario = vector.length / 2;
+        int i = 0;
+        boolean j = true;
 
-        if (vector[numBinario - 1] == numEntero) {
-            System.out.println("El numero si esta en el vector");
-        } else if (vector[numBinario - 1] < numEntero) {
-            numBinario = numBinario / 2;
-        }else{
-            
+        while (j) {
+            if (vector[i] == numEntero) {
+                System.out.println("El numero entero si se encuentra en el vector");
+                j= false;
+            } else if (vector[i] != numEntero) {
+                i++;
+                if(i==vector.length){
+                System.out.println("El numero entero no se encuentra en el vector");
+                j= false;                    
+                }
+             }
         }
     }
-    
 
     public int getNumVector() {
         return numVector;
@@ -67,14 +71,6 @@ public class SistemaBinario {
 
     public void setVector(int[] vector) {
         this.vector = vector;
-    }
-
-    public int getNumBinario() {
-        return numBinario;
-    }
-
-    public void setNumBinario(int numBinario) {
-        this.numBinario = numBinario;
     }
 
     public int getNumEntero() {
