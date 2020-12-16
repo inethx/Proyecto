@@ -38,24 +38,25 @@ public class SistemaBinario {
         System.out.println();
     }
 
-    public void busquedaBinario() {
+    public int busquedaBinario(int[] vector, int entero  ) {
 
-        int i = 0;
-        boolean j = true;
-
-        while (j) {
-            if (vector[i] == numEntero) {
-                System.out.println("El numero entero si se encuentra en el vector");
-                j= false;
-            } else if (vector[i] != numEntero) {
-                i++;
-                if(i==vector.length){
-                System.out.println("El numero entero no se encuentra en el vector");
-                j= false;                    
-                }
-             }
+        int inicio = 0;
+        int fin = vector.length - 1;
+        int pos;
+        while (inicio <= fin) {
+            pos = (inicio + fin) / 2;
+            if (vector[pos] == numEntero) {
+            return pos;
+            } else if (vector[pos] < numEntero) {
+                inicio = pos + 1;
+            } else {
+                fin = pos - 1;
+            }
         }
+        return -1;
     }
+
+
 
     public int getNumVector() {
         return numVector;

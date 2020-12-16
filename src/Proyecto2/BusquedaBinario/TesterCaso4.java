@@ -15,9 +15,13 @@ public class TesterCaso4 {
 
         sistema.iniciarArreglo();
         sistema.mostrarArreglo();
-        
 
-        
-        sistema.busquedaBinario();
+        int resultado = sistema.busquedaBinario(sistema.getVector(), sistema.getNumEntero());
+
+        if (resultado != -1) {
+            System.out.println("Se encontro el dato " + numEntero+" en el vector");
+        } else {
+            System.out.println("El dato no se encuentra en el vector");
+        }
     }
 }
