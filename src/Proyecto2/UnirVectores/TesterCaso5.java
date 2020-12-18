@@ -2,7 +2,7 @@ package Proyecto2.UnirVectores;
 
 import java.util.Scanner;
 
-public class TesterCaso4 {
+public class TesterCaso5 {
 
     public static void main(String[] args) {
         int numArreglo1;
