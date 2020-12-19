@@ -43,12 +43,18 @@ public class Parlantes {
             System.out.println("[3] Parlante subwoofer");
             int tipoParl = entrada.nextInt();
             if (tipoParl == 1) {
+                System.out.println("Cuanto desea bajar");
+                volumen = entrada.nextInt();
                 parIzqVolumen = volumenDefault - volumen;
 
             } else if (tipoParl == 2) {
+                System.out.println("Cuanto desea bajar");
+                volumen = entrada.nextInt();
                 parDerVolumen = volumenDefault - volumen;
 
             } else {
+                System.out.println("Cuanto desea bajar");
+                volumen = entrada.nextInt();
                 parSubVolumen = volumenDefault - volumen;
 
             }
@@ -60,22 +66,22 @@ public class Parlantes {
             int tipoParl = entrada.nextInt();
             if (tipoParl == 1) {
                 System.out.println("Estado del volumen parlante izquierdo " + parIzqVolumen);
-                System.out.println("Cuanto desea bajar");
+                System.out.println("Cuanto desea subir");
                 volumen = entrada.nextInt();
 
-                parIzqVolumen = volumenDefault - volumen;
+                parIzqVolumen = volumenDefault + volumen;
 
             } else if (tipoParl == 2) {
                 System.out.println("Estado del volumen parlante derecho " + parDerVolumen);
-                System.out.println("Cuanto desea bajar");
+                System.out.println("Cuanto desea subir");
                 volumen = entrada.nextInt();
-                parDerVolumen = volumenDefault - volumen;
+                parDerVolumen = volumenDefault + volumen;
 
             } else {
                 System.out.println("Estado del volumen parlante subwoofer " + parSubVolumen);
-                System.out.println("Cuanto desea bajar");
+                System.out.println("Cuanto desea subir");
                 volumen = entrada.nextInt();
-                parSubVolumen = volumenDefault - volumen;
+                parSubVolumen = volumenDefault + volumen;
 
             }
         }
@@ -114,13 +120,13 @@ public class Parlantes {
                 System.out.println("[3] Parlante subwoofer");
                 tipoParl = entrada.nextInt();
                 if (tipoParl == 1) {
-                    parlIzquierdo = true;
+                    parlIzquierdo = false;
 
                 } else if (tipoParl == 2) {
-                    parlDerecho = true;
+                    parlDerecho = false;
 
                 } else {
-                    parlSubwoofer = true;
+                    parlSubwoofer = false;
 
                 }
         }

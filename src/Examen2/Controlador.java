@@ -32,6 +32,7 @@ public class Controlador {
                     equipoSonido.inicializacionLista();
                     parlante.subirBajarVolumen();
                     parlante.estadoParlante();
+                    parlante.sonar();
                     break;
                 case 4:
                     i = false;

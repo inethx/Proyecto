@@ -29,8 +29,8 @@ public class EquipoSonido {
         System.out.println("[2] Desde un punto.:");
         int iniciar = entrada.nextInt();
         if (iniciar == 1) {
-            for (int i = 0; i < listaAudio.length; i++) {
-                int aleatorio = (int) (Math.random() * listaAudio.length);
+            for (int i = 0; i < conteo; i++) {
+                int aleatorio = (int) (Math.random() * conteo);
                 if (listaAudio.equals("") == false) {
                     System.out.println(listaAudio[i]);
                 }
