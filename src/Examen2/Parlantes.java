@@ -7,7 +7,10 @@ public class Parlantes {
     boolean parlIzquierdo = true;
     boolean parlDerecho = true;
     boolean parlSubwoofer = true;
-    String[] audio;
+    String audio;
+    int parIzqVolumen;
+    int parDerVolumen;
+    int parSubVolumen;
     int volumen;
     Scanner entrada = new Scanner(System.in);
 
@@ -15,8 +18,142 @@ public class Parlantes {
 
     }
 
-    public boolean isParlIzquierdo() {
-        return parlIzquierdo;
+    public Parlantes(String audio, int parIzqVolumen, int parDerVolumen, int parSubVolumen, int volumen) {
+        this.audio = audio;
+        this.parIzqVolumen = parIzqVolumen;
+        this.parDerVolumen = parDerVolumen;
+        this.parSubVolumen = parSubVolumen;
+        this.volumen = volumen;
+    }
+
+    public void subirBajarVolumen() {
+
+        int volumenDefault = 5;
+        parIzqVolumen = volumenDefault;
+        parDerVolumen = volumenDefault;
+        parSubVolumen = volumenDefault;
+        System.out.println("Desea bajar o subir volumen:");
+        System.out.println("[1] Bajar.");
+        System.out.println("[2] subir.");
+        int opcion = entrada.nextInt();
+        if (opcion == 1) {
+            System.out.println("Cual parlante desea bajar volumen:");
+            System.out.println("[1] Parlante izquierdo.");
+            System.out.println("[2] Parlante derecho");
+            System.out.println("[3] Parlante subwoofer");
+            int tipoParl = entrada.nextInt();
+            if (tipoParl == 1) {
+                parIzqVolumen = volumenDefault - volumen;
+
+            } else if (tipoParl == 2) {
+                parDerVolumen = volumenDefault - volumen;
+
+            } else {
+                parSubVolumen = volumenDefault - volumen;
+
+            }
+        } else {
+            System.out.println("Cual parlante desea subir volumen:");
+            System.out.println("[1] Parlante izquierdo.");
+            System.out.println("[2] Parlante derecho");
+            System.out.println("[3] Parlante subwoofer");
+            int tipoParl = entrada.nextInt();
+            if (tipoParl == 1) {
+                System.out.println("Estado del volumen parlante izquierdo " + parIzqVolumen);
+                System.out.println("Cuanto desea bajar");
+                volumen = entrada.nextInt();
+
+                parIzqVolumen = volumenDefault - volumen;
+
+            } else if (tipoParl == 2) {
+                System.out.println("Estado del volumen parlante derecho " + parDerVolumen);
+                System.out.println("Cuanto desea bajar");
+                volumen = entrada.nextInt();
+                parDerVolumen = volumenDefault - volumen;
+
+            } else {
+                System.out.println("Estado del volumen parlante subwoofer " + parSubVolumen);
+                System.out.println("Cuanto desea bajar");
+                volumen = entrada.nextInt();
+                parSubVolumen = volumenDefault - volumen;
+
+            }
+        }
+    }
+
+    public void estadoParlante() {
+        System.out.println("Desea deshabilitar o habilitar:");
+        System.out.println("[1] Deshabilitar.");
+        System.out.println("[2] Habilitar");
+        int estado = entrada.nextInt();
+
+        switch (estado) {
+
+            case 1:
+                System.out.println("Cual parlante desea deshabilitada:");
+                System.out.println("[1] Parlante izquierdo.");
+                System.out.println("[2] Parlante derecho");
+                System.out.println("[3] Parlante subwoofer");
+                int tipoParl = entrada.nextInt();
+                if (tipoParl == 1) {
+                    parlIzquierdo = false;
+
+                } else if (tipoParl == 2) {
+                    parlDerecho = false;
+
+                } else {
+                    parlSubwoofer = false;
+
+                }
+                break;
+
+            case 2:
+                System.out.println("Cual parlante desea habilitada:");
+                System.out.println("[1] Parlante izquierdo.");
+                System.out.println("[2] Parlante derecho");
+                System.out.println("[3] Parlante subwoofer");
+                tipoParl = entrada.nextInt();
+                if (tipoParl == 1) {
+                    parlIzquierdo = true;
+
+                } else if (tipoParl == 2) {
+                    parlDerecho = true;
+
+                } else {
+                    parlSubwoofer = true;
+
+                }
+        }
+    }
+
+    public void sonar() {
+
+        if (parlIzquierdo = true) {
+            System.out.println("Parlante izquiedo. Estado: habilitado.");
+            System.out.println("Parlante izquiedo. Volumen: " + parIzqVolumen);
+            audio = "1010110";
+            System.out.println(audio);
+
+        } else {
+            System.out.println("Parlante izquiedo. Estado: deshabilitado.");
+        }
+
+        if (parlDerecho = true) {
+            System.out.println("Parlante derecho. Estado: habilitado.");
+            System.out.println("Parlante derecho. Volumen: " + parDerVolumen);
+            audio = "1010110";
+            System.out.println(audio);
+        } else {
+            System.out.println("Parlante derecho. Estado: deshabilitado.");
+        }
+
+        if (parlSubwoofer = true) {
+            System.out.println("Parlante subwoofer. Estado: habilitado.");
+            System.out.println("Parlante subwoofer. Volumen: " + parSubVolumen);
+
+        } else {
+            System.out.println("Parlante subwoofer. Estado: deshabilitado.");
+        }
     }
 
     public void setParlIzquierdo(boolean parlIzquierdo) {
@@ -39,11 +176,11 @@ public class Parlantes {
         this.parlSubwoofer = parlSubwoofer;
     }
 
-    public String[] getAudio() {
+    public String getAudio() {
         return audio;
     }
 
-    public void setAudio(String[] audio) {
+    public void setAudio(String audio) {
         this.audio = audio;
     }
 
@@ -63,98 +200,4 @@ public class Parlantes {
         this.entrada = entrada;
     }
 
-    public int subirBajarVolumen(int vol) {
-
-        volumen = 5;
-        System.out.println("Desea bajar o subir volumen:");
-        System.out.println("[1] Bajar.");
-        System.out.println("[2] subir.");
-        int opcion = entrada.nextInt();
-        if (opcion == 1) {
-            System.out.println("Cual parlante desea bajar volumen:");
-            System.out.println("[1] Parlante izquierdo.");
-            System.out.println("[2] Parlante derecho");
-            System.out.println("[3] Parlante subwoofer");
-            int tipoParl = entrada.nextInt();
-            if (tipoParl == 1) {
-                int parlIzqVol = volumen - vol;
-                return parlIzqVol;
-            } else if (tipoParl == 2) {
-                int parlDerVol = volumen - vol;
-                return parlDerVol;
-            } else {
-                int parlSubVol = volumen - vol;
-                return parlSubVol;
-            }
-        } else {
-            System.out.println("Cual parlante desea subir volumen:");
-            System.out.println("[1] Parlante izquierdo.");
-            System.out.println("[2] Parlante derecho");
-            System.out.println("[3] Parlante subwoofer");
-            int tipoParl = entrada.nextInt();
-            if (tipoParl == 1) {
-                int parlIzqVol = volumen + vol;
-                return parlIzqVol;
-            } else if (tipoParl == 2) {
-                int parlDerVol = volumen + vol;
-                return parlDerVol;
-            } else {
-                int parlSubVol = volumen + vol;
-                return parlSubVol;
-            }
-        }
-
-    }
-
-    public void estadoParlante() {
-        System.out.println("Desea deshabilitar o habilitar:");
-        System.out.println("[1] Deshabilitar.");
-        System.out.println("[2] Habilitar");
-        int estado = entrada.nextInt();
-
-            switch (estado) {
-
-                case 1:
-                    System.out.println("Cual parlante desea deshabilitada:");
-                    System.out.println("[1] Parlante izquierdo.");
-                    System.out.println("[2] Parlante derecho");
-                    System.out.println("[3] Parlante subwoofer");
-                    int tipoParl = entrada.nextInt();
-                    if (tipoParl == 1) {
-                        parlIzquierdo = false;
-
-                    } else if (tipoParl == 2) {
-                        parlDerecho = false;
-
-                    } else {
-                        parlSubwoofer = false;
-
-                    }
-                    break;
-
-                case 2:
-                    System.out.println("Cual parlante desea habilitada:");
-                    System.out.println("[1] Parlante izquierdo.");
-                    System.out.println("[2] Parlante derecho");
-                    System.out.println("[3] Parlante subwoofer");
-                    tipoParl = entrada.nextInt();
-                    if (tipoParl == 1) {
-                        parlIzquierdo = true;
-
-                    } else if (tipoParl == 2) {
-                        parlDerecho = true;
-
-                    } else {
-                        parlSubwoofer = true;
-
-                    }
-            }
-        }
-public void sonar(){
-    if(parlIzquierdo=true){
-        System.out.println
-    }
 }
-    
-}
-
