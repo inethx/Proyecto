@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Parlantes {
 
-    boolean parlIzquierdo = true;
-    boolean parlDerecho = true;
-    boolean parlSubwoofer = true;
+    boolean parlIzquierdo;
+    boolean parlDerecho;
+    boolean parlSubwoofer;
     String audio;
     int parIzqVolumen;
     int parDerVolumen;
@@ -92,7 +92,9 @@ public class Parlantes {
         System.out.println("[1] Deshabilitar.");
         System.out.println("[2] Habilitar");
         int estado = entrada.nextInt();
-
+        parlIzquierdo = true;
+        parlDerecho = true;
+        parlSubwoofer = true;
         switch (estado) {
 
             case 1:
@@ -120,13 +122,13 @@ public class Parlantes {
                 System.out.println("[3] Parlante subwoofer");
                 tipoParl = entrada.nextInt();
                 if (tipoParl == 1) {
-                    parlIzquierdo = false;
+                    parlIzquierdo = true;
 
                 } else if (tipoParl == 2) {
-                    parlDerecho = false;
+                    parlDerecho = true;
 
                 } else {
-                    parlSubwoofer = false;
+                    parlSubwoofer = true;
 
                 }
         }
